@@ -1,0 +1,27 @@
+use-nnet2: True
+decoder:
+    nnet-mode : 3
+    model : zeroth/final.mdl
+    word-syms : zeroth/words.txt
+    fst : zeroth/HCLG.fst
+    feature-type : mfcc
+    mfcc-config : zeroth/conf/mfcc.conf
+    ivector-extraction-config : zeroth/conf/ivector_extractor.conf
+    min-active : 200
+    max-active : 7000
+    beam : 16.0
+    lattice-beam : 5.0
+    acoustic-scale : 1.0
+    do-endpointing : True
+    endpoint-silence-phones : "1:2:3:4:5:6:7:8:9:10"
+    traceback-period-in-secs : 0.4
+    chunk-length-in-secs : 0.4
+    num-nbest : 1
+    frame-subsampling-factor: 3
+    lm-fst : zeroth/G.fst
+    big-lm-const-arpa : zeroth/G.carpa
+    max-mem : 1000000
+
+out-dir: tmp
+use-vad: True
+silence-timeout: 10
